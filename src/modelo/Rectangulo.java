@@ -6,7 +6,7 @@ public class Rectangulo extends Figura
   private Double ancho;
   private Double largo;
 
-  Rectangulo(String idFigura,Double coordenadaCentroX, Double coordenadaCentroY, Double ancho, Double largo) {
+  public Rectangulo(String idFigura,Double coordenadaCentroX, Double coordenadaCentroY, Double ancho, Double largo) {
     
 	super(idFigura, coordenadaCentroX, coordenadaCentroY);
     this.ancho = ancho;

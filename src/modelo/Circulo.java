@@ -1,14 +1,16 @@
 package modelo;
 
 import java.lang.Math;
+import modelo.StringExceptionBro;
 
 public class Circulo extends Figura {
 
   private double radio;
 
  
-  public Circulo(String iD_Figura, Double coordenadaCentroX,Double coordenadaCentroY, Double radio){ 
+  public Circulo(String iD_Figura, Double coordenadaCentroX,Double coordenadaCentroY, Double radio) throws StringExceptionBro{ 
     super(iD_Figura, coordenadaCentroX, coordenadaCentroY);
+    Class claseVariable = radio.getClass();
     this.radio = radio;
   }
 

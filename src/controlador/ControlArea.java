@@ -20,6 +20,7 @@ import modelo.Cuadrado;
 import modelo.Figura;
 import modelo.ManejadorArchivo;
 import modelo.Rectangulo;
+import modelo.StringExceptionBro;
 import modelo.Triangulo;
 import javafx.fxml.Initializable;
 
@@ -70,12 +71,18 @@ public class ControlArea implements Initializable
 			
 		}
     	
+		else if(FiguraEscogida.equals("rectangulo")) {
+			CuadroTexto2.setVisible(true);
+			CuadroTexto1.setPromptText("base");
+			CuadroTexto2.setPromptText("altura");
+		}
+    	
     	
 	}
     	
     
     @FXML
-    void Calcular(ActionEvent event) 
+    void Calcular(ActionEvent event) throws StringExceptionBro 
     {
     	Double area=0d;
     	
@@ -102,14 +109,28 @@ public class ControlArea implements Initializable
     		
     	}else if(FiguraEscogida.equals("circulo")) {
     		
-    		Double Radio= Double.parseDouble(CuadroTexto1.getText());
-    		Circulo circulo =new Circulo("0", 5d,4d, Radio);
+    		Double radio= Double.parseDouble(CuadroTexto1.getText());
+    		Class claseRadio = radio.getClass();
+    		if(claseRadio == String.class) {
+    	    	throw new StringExceptionBro("Se ingreso una cadena, no un numero");
+    	    }
+    		Circulo circulo =new Circulo("0", 5d,4d, radio);
     		
     		area =circulo.calcularArea();
     		
     		ManejadorArchivo.escribirEnArchivo(circulo);
     	}    	
     	
+    	else if(FiguraEscogida.equals("rectangulo")) {
+    		Double altura=Double.parseDouble (CuadroTexto2.getText());
+    		Double base=Double.parseDouble (CuadroTexto1.getText());
+    		
+    		Rectangulo rectangulo =new Rectangulo("0", 5d,4d, altura,base);
+    		
+    		area=rectangulo.calcular_area();
+    		
+    		ManejadorArchivo.escribirEnArchivo(rectangulo);
+    	}
     	
     	
     	resultado.setText(Double.toString(area));
