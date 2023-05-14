@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.Circulo;
 import modelo.Cuadrado;
+import modelo.Figura;
+import modelo.ManejadorArchivo;
 import modelo.Rectangulo;
 import modelo.Triangulo;
 import javafx.fxml.Initializable;
@@ -86,6 +88,7 @@ public class ControlArea implements Initializable
     		
     		area=triangulo.calcular_area();
     		
+    		ManejadorArchivo.escribirEnArchivo(triangulo);
     	}
     	else if(FiguraEscogida.equals("cuadrado"))
     	{
@@ -95,11 +98,16 @@ public class ControlArea implements Initializable
     		
     		area=cuadrado.calcular_area();
     		
+    		ManejadorArchivo.escribirEnArchivo(cuadrado);
+    		
     	}else if(FiguraEscogida.equals("circulo")) {
     		
     		Double Radio= Double.parseDouble(CuadroTexto1.getText());
     		Circulo circulo =new Circulo("0", 5d,4d, Radio);
+    		
     		area =circulo.calcularArea();
+    		
+    		ManejadorArchivo.escribirEnArchivo(circulo);
     	}    	
     	
     	
