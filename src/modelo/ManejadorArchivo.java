@@ -13,9 +13,9 @@ import java.io.IOException;
 
 public class ManejadorArchivo 
 {
-	 public static void escribirEnArchivo(String nombreArchivo, Figura dato) {
+	 public static void escribirEnArchivo(Figura dato) {
 	        try {
-	            BufferedWriter escritor = new BufferedWriter(new FileWriter(nombreArchivo, true));
+	            BufferedWriter escritor = new BufferedWriter(new FileWriter("/Users/sophiaaristizabal/eclipse-workspace/TallerADS/src/modelo/FileFiguras.txt", true));
 	            escritor.write(dato.toString() );
 	            escritor.newLine(); // Agrega una nueva línea
 	            escritor.close();

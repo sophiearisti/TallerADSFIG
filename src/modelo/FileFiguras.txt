@@ -1,0 +1,1 @@
+Triangulo [Base=4.0, Altura=4.0, getArea()=8.0, getID_Figura()=0]
