@@ -67,6 +67,8 @@ public class ControlArea implements Initializable
 			CuadroTexto1.setPromptText("Radio");
 			
 		}
+    	
+    	
 	}
     	
     
