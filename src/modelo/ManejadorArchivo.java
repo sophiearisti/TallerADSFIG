@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class ManejadorArchivo 
 {
-	 public static void escribirEnArchivo(String nombreArchivo, String dato) {
+	 public static void escribirEnArchivo(String nombreArchivo, Figura dato) {
 	        try {
 	            BufferedWriter escritor = new BufferedWriter(new FileWriter(nombreArchivo, true));
-	            escritor.write(dato);
+	            escritor.write(dato.toString() );
 	            escritor.newLine(); // Agrega una nueva línea
 	            escritor.close();
 	            System.out.println("Dato agregado al archivo correctamente.");
