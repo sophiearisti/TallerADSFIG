@@ -40,53 +40,44 @@ public class ControlArea implements Initializable
     @FXML
     private TextField CuadroTexto2;
     
-    private static String FiguraEscogida;
-    
     @FXML
     private Label resultado;
-
-	
-	public static void SetFiguraEscogida(String figuraEscogida)
-	{
-		FiguraEscogida=figuraEscogida;
-		
-	}
+    
     
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
-    	if(FiguraEscogida.equals("triangulo"))
+    	if(DatoFigura.getFigura().equals("triangulo"))
 		{
 			CuadroTexto2.setVisible(true);
 			CuadroTexto1.setPromptText("base");
 			CuadroTexto2.setPromptText("altura");
 		}
-    	else if(FiguraEscogida.equals("cuadrado"))
+    	else if(DatoFigura.getFigura().equals("cuadrado"))
 		{
 			CuadroTexto1.setPromptText("lado");
-		}else if(FiguraEscogida.equals("circulo"))
+		}else if(DatoFigura.getFigura().equals("circulo"))
 		{
 			CuadroTexto2.setVisible(false);
 			CuadroTexto1.setPromptText("Radio");
 			
 		}
     	
-		else if(FiguraEscogida.equals("rectangulo")) {
+		else if(DatoFigura.getFigura().equals("rectangulo")) {
 			CuadroTexto2.setVisible(true);
 			CuadroTexto1.setPromptText("base");
 			CuadroTexto2.setPromptText("altura");
 		}
     	
-    	
 	}
     	
-    
+   
     @FXML
     void Calcular(ActionEvent event) throws StringExceptionBro 
     {
     	Double area=0d;
     	
-    	if(FiguraEscogida.equals("triangulo"))
+    	if(DatoFigura.getFigura().equals("triangulo"))
     	{
     		try {
     			Double altura=Double.parseDouble (CuadroTexto2.getText());
@@ -104,7 +95,7 @@ public class ControlArea implements Initializable
     		}
     		
     	}
-    	else if(FiguraEscogida.equals("cuadrado"))
+    	else if(DatoFigura.getFigura().equals("cuadrado"))
     	{
     		try {
     			Double lado=Double.parseDouble (CuadroTexto1.getText());
@@ -120,7 +111,7 @@ public class ControlArea implements Initializable
         	}
     		
     		
-    	else if(FiguraEscogida.equals("circulo")) {
+    	else if(DatoFigura.getFigura().equals("circulo")) {
     		
     		try {
     			Double radio= Double.parseDouble(CuadroTexto1.getText());
@@ -135,7 +126,7 @@ public class ControlArea implements Initializable
     	}
     		
     	
-    	else if(FiguraEscogida.equals("rectangulo")) {
+    	else if(DatoFigura.getFigura().equals("rectangulo")) {
     		try {
     			Double altura=Double.parseDouble (CuadroTexto2.getText());
         		Double base=Double.parseDouble (CuadroTexto1.getText());
@@ -168,11 +159,6 @@ public class ControlArea implements Initializable
 		stage.setScene(scene);
 		stage.show();
 
-    }
-
-
-    
-    
-    
+    } 
 }
 

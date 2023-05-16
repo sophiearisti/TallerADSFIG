@@ -29,17 +29,18 @@ public class ControlMenuFigura implements Initializable{
     @FXML
     void MostrarPantallaCalcularArea(ActionEvent event) throws IOException 
     {
-    	 Stage stage;
-    	 Scene scene;
-    	 Parent root;
-    	 
-    	ControlArea.SetFiguraEscogida(scrollFigura.getValue());
-    	 
-    	root = FXMLLoader.load(getClass().getResource("/vista/pantallaCalcularArea.fxml"));
- 	    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
- 		scene = new Scene(root);
- 		stage.setScene(scene);
- 		stage.show();
+
+    	
+		Stage stage;
+	   	Scene scene;
+	   	Parent root;
+	   	 
+	   	DatoFigura.setFigura(scrollFigura.getValue());
+  	 	root = FXMLLoader.load(getClass().getResource("/vista/pantallaCalcularArea.fxml"));
+	    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 
     
     }
