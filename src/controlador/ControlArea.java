@@ -98,7 +98,9 @@ public class ControlArea implements Initializable
         		
         		ManejadorArchivo.escribirEnArchivo(triangulo);
     		} catch(NumberFormatException nfe) {
+    			//final Label errorLabel = new Label();
     			System.out.println("NumberFormatExcdeption");
+    			//errorLabel.setText("bro eso es invalido");
     		}
     		
     	}
