@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import Persistencia.ManejadorArchivo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,6 @@ import javafx.stage.Stage;
 import modelo.Circulo;
 import modelo.Cuadrado;
 import modelo.Figura;
-import modelo.ManejadorArchivo;
 import modelo.Rectangulo;
 import modelo.StringExceptionBro;
 import modelo.Triangulo;
