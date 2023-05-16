@@ -1,7 +1,7 @@
 package modelo;
 
 import java.lang.Math;
-import modelo.StringExceptionBro;
+
 
 public class Circulo extends Figura {
 

@@ -23,7 +23,7 @@ import modelo.Rectangulo;
 import modelo.StringExceptionBro;
 import modelo.Triangulo;
 import javafx.fxml.Initializable;
-
+import javafx.scene.control.Alert;
 
 public class ControlArea implements Initializable
 {
@@ -88,48 +88,64 @@ public class ControlArea implements Initializable
     	
     	if(FiguraEscogida.equals("triangulo"))
     	{
-    		Double altura=Double.parseDouble (CuadroTexto2.getText());
-    		Double base=Double.parseDouble (CuadroTexto1.getText());
+    		try {
+    			Double altura=Double.parseDouble (CuadroTexto2.getText());
+        		Double base=Double.parseDouble (CuadroTexto1.getText());
+        		
+        		Triangulo triangulo=new Triangulo("0", 5d,4d, altura,base);
+        		
+        		area=triangulo.calcular_area();
+        		
+        		ManejadorArchivo.escribirEnArchivo(triangulo);
+    		} catch(NumberFormatException nfe) {
+    			System.out.println("NumberFormatExcdeption");
+    		}
     		
-    		Triangulo triangulo=new Triangulo("0", 5d,4d, altura,base);
-    		
-    		area=triangulo.calcular_area();
-    		
-    		ManejadorArchivo.escribirEnArchivo(triangulo);
     	}
     	else if(FiguraEscogida.equals("cuadrado"))
     	{
-    		Double lado=Double.parseDouble (CuadroTexto1.getText());
+    		try {
+    			Double lado=Double.parseDouble (CuadroTexto1.getText());
+        		
+        		Cuadrado cuadrado=new Cuadrado("0", 5d,4d, lado);
+        		
+        		area=cuadrado.calcular_area();
+        		
+        		ManejadorArchivo.escribirEnArchivo(cuadrado);
+    		}  catch (NumberFormatException nfe) {
+        		System.out.println("NumberFormatExcdeption");
+        		}
+        	}
     		
-    		Cuadrado cuadrado=new Cuadrado("0", 5d,4d, lado);
     		
-    		area=cuadrado.calcular_area();
+    	else if(FiguraEscogida.equals("circulo")) {
     		
-    		ManejadorArchivo.escribirEnArchivo(cuadrado);
+    		try {
+    			Double radio= Double.parseDouble(CuadroTexto1.getText());
+        		Circulo circulo =new Circulo("0", 5d,4d, radio);
+        		
+        		area =circulo.calcularArea();
+        		
+        		ManejadorArchivo.escribirEnArchivo(circulo);
+        	} catch (NumberFormatException nfe) {
+        		System.out.println("NumberFormatExcdeption");
+        	}
+    	}
     		
-    	}else if(FiguraEscogida.equals("circulo")) {
-    		
-    		Double radio= Double.parseDouble(CuadroTexto1.getText());
-    		Class claseRadio = radio.getClass();
-    		if(claseRadio == String.class) {
-    	    	throw new StringExceptionBro("Se ingreso una cadena, no un numero");
-    	    }
-    		Circulo circulo =new Circulo("0", 5d,4d, radio);
-    		
-    		area =circulo.calcularArea();
-    		
-    		ManejadorArchivo.escribirEnArchivo(circulo);
-    	}    	
     	
     	else if(FiguraEscogida.equals("rectangulo")) {
-    		Double altura=Double.parseDouble (CuadroTexto2.getText());
-    		Double base=Double.parseDouble (CuadroTexto1.getText());
-    		
-    		Rectangulo rectangulo =new Rectangulo("0", 5d,4d, altura,base);
-    		
-    		area=rectangulo.calcular_area();
-    		
-    		ManejadorArchivo.escribirEnArchivo(rectangulo);
+    		try {
+    			Double altura=Double.parseDouble (CuadroTexto2.getText());
+        		Double base=Double.parseDouble (CuadroTexto1.getText());
+        		
+        		Rectangulo rectangulo =new Rectangulo("0", 5d,4d, altura,base);
+        		
+        		area=rectangulo.calcular_area();
+        		
+        		ManejadorArchivo.escribirEnArchivo(rectangulo);
+    		} catch(NumberFormatException nfe) {
+    			System.out.println("NumberFormatException");
+    		}
     	}
     	
     	
