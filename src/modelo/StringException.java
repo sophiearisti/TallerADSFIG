@@ -1,9 +1,9 @@
 package modelo;
 
-public class StringExceptionBro extends Exception {
+public class StringException extends Exception {
 	
 	private String mensaje; 
-	public StringExceptionBro(String mensaje) {
+	public StringException(String mensaje) {
 		super(mensaje);
 		this.mensaje = mensaje;
 	}

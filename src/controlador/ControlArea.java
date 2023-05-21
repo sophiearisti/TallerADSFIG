@@ -20,7 +20,7 @@ import modelo.Circulo;
 import modelo.Cuadrado;
 import modelo.Figura;
 import modelo.Rectangulo;
-import modelo.StringExceptionBro;
+import modelo.StringException;
 import modelo.Triangulo;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -73,7 +73,7 @@ public class ControlArea implements Initializable
     	
    
     @FXML
-    void Calcular(ActionEvent event) throws StringExceptionBro 
+    void Calcular(ActionEvent event) throws StringException 
     {
     	Double area=0d;
     	
