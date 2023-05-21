@@ -21,7 +21,7 @@ public class Rectangulo extends Figura
 
 @Override
 public String toString() {
-	return "Rectangulo [ancho=" + ancho + ", largo=" + largo + ", getArea()=" + getArea() + ", getID_Figura()="
+	return "Rectangulo [ancho=" + ancho + ", largo=" + largo + ", Area" + getArea() + ", ID_Figura "
 			+ getID_Figura() + "]";
 }
 

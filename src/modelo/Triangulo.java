@@ -40,7 +40,7 @@ private Double Base;
 
 @Override
 public String toString() {
-	return "Triangulo [Base=" + Base + ", Altura=" + Altura + ", getArea()=" + getArea() + ", getID_Figura()="
+	return "Triangulo [Base=" + Base + ", Altura=" + Altura + ", Area" + getArea() + ", IDFIGURA()="
 			+ getID_Figura() + "]";
 }
 

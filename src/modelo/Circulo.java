@@ -31,7 +31,7 @@ public class Circulo extends Figura {
 
 	@Override
 	public String toString() {
-		return "Circulo [radio=" + radio + ", calcular_area()=" + calcular_area() + ", getArea()=" + getArea() + "]";
+		return "Circulo [radio=" + radio + ", ID" + getID_Figura() + ", Area " + getArea() + "]";
 	}
     
     

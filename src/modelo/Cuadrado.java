@@ -26,7 +26,7 @@ public void setLado(Double lado) {
 
 @Override
 public String toString() {
-	return "Cuadrado [lado=" + lado + ", getArea()=" + getArea() + ", getID_Figura()=" + getID_Figura() + "]";
+	return "Cuadrado [lado=" + lado + ", Area" + getArea() + ", ID_Figura" + getID_Figura() + "]";
 }
 
 
