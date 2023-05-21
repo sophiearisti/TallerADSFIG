@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Cuadrante 
 {
 
@@ -7,6 +9,7 @@ public class Cuadrante
 	private Float coordenadaYinicial;
 	private Float coordenadaXFinal;
 	private Float coordenadaYFinal;
+	ArrayList<Figura> FIguras;
 	
 	public Cuadrante(Float coordenadaXinicial, Float coordenadaYinicial, Float coordenadaXFinal,
 			Float coordenadaYFinal) 
